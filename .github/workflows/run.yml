@@ -1,11 +1,11 @@
 name: Run
 on:
-	push:
-	workflow_dispatch:
+  push:
+  workflow_dispatch:
 
 jobs:
-	build:
-		runs-on: ubuntu-latest
-		steps:
-			- uses: actions/checkout@v4
-			- run: python auto_deploy.py
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python auto_deploy.py
