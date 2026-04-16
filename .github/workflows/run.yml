@@ -2,15 +2,15 @@ name: 每小时自动部署 Back4App
 
 on:
 	schedule:
-		- cron: "0 * * * *"  # 每小时整点执行 
-	workflow_dispatch:     # 允许手动触发
+		- cron: "0 * * * *"
+	workflow_dispatch:
 
 jobs:
 	run:
 		runs-on: ubuntu-latest
 		steps:
-			- name: 拉取仓库代码
+			- name: Checkout code
 			  uses: actions/checkout@v4
 
-			- name: 运行自动部署脚本
+			- name: Run auto deploy script
 			  run: python auto_deploy.py
