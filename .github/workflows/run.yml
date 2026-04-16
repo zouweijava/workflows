@@ -1,16 +1,11 @@
-name: 每小时自动部署 Back4App
-
+name: Run
 on:
-	schedule:
-		- cron: "0 * * * *"
+	push:
 	workflow_dispatch:
 
 jobs:
-	run:
+	build:
 		runs-on: ubuntu-latest
 		steps:
-			- name: Checkout code
-			  uses: actions/checkout@v4
-
-			- name: Run auto deploy script
-			  run: python auto_deploy.py
+			- uses: actions/checkout@v4
+			- run: python auto_deploy.py
